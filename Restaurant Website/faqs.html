@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Questions - Empire Restaurant</title>
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }   
+            #faq-container {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h3, p {
+            color: #333;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+        }
+
+        .question {
+            font-weight: bold;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        #question-form {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, p {
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="faq-container">
+        <h1>Empire Restaurant - Frequently Asked Questions</h1><hr>
+    
+        <div class="faq-item">
+            <h3 class="question">Q: What type of cuisine does Empire Restaurant offer?</h3>
+            <p>A: Empire Restaurant specializes in a diverse range of international cuisines, blending flavors from around the world.</p>
+        </div>
+    
+        <div class="faq-item">
+            <h3 class="question">Q: Are reservations required?</h3>
+            <p>A: While reservations are recommended, we also welcome walk-in guests based on table availability.</p>
+        </div>
+    
+        <div class="faq-item">
+            <h3 class="question">Q: Does Empire Restaurant offer vegetarian options?</h3>
+            <p>A: Yes, we have a variety of delicious vegetarian dishes to cater to different dietary preferences.</p>
+        </div>
+    
+        <div class="faq-item">
+            <h3 class="question">Q: Is there parking available?</h3>
+            <p>A: Empire Restaurant provides dedicated parking spaces for our patrons for a hassle-free dining experience.</p>
+        </div>
+    
+        <div class="faq-item">
+            <h3 class="question">Q: Can I host private events at Empire Restaurant?</h3>
+            <p>A: Absolutely! We offer event planning services for private gatherings, celebrations, and corporate events.</p>
+        </div>
+    <div id="question-form">
+        <h1>Ask a Question - Empire Restaurant</h1>
+        <p>Please feel free to ask any questions or share your feedback with us!</p>
+
+        <form id="customer-question-form">
+            <label for="customer-name">Your Name:</label>
+            <input type="text" id="customer-name" name="customer-name" required>
+
+            <label for="customer-email">Your Email:</label>
+            <input type="email" id="customer-email" name="customer-email" required>
+
+            <label for="customer-question">Your Question:</label>
+            <textarea id="customer-question" name="customer-question" rows="4" required></textarea>
+
+            <button type="button" onclick="submitQuestion()">Submit Question</button>
+        </form>
+    </div>
+
+    <script>
+        function submitQuestion() {
+            const customerName = document.getElementById('customer-name').value;
+            const customerEmail = document.getElementById('customer-email').value;
+            const customerQuestion = document.getElementById('customer-question').value;
+            alert(`Thank you, ${customerName}! Your question has been submitted:\nEmail: ${customerEmail}\nQuestion: ${customerQuestion}`);
+        }
+    </script>
+</body>
+</html>

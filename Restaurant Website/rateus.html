@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rate Our Restaurant</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        #container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1,h3{
+            color: #333;
+        }
+
+        #rating-container {
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .star {
+            font-size: 24px;
+            color: #ccc;
+            cursor: pointer;
+        }
+
+        .star:hover,
+        .star.active {
+            color: #fdd835;
+        }
+
+        #comment {
+            width: 100%;
+            height: 100px;
+            margin: 20px 0;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        #submit-btn {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .review-container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+        }
+
+        .review-heading {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .review-text {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .customer-name {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+        .stars-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .star {
+            color: #FFD700; /* Gold color for stars */
+            font-size: 20px;
+            margin: 0 2px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Rate Our Restaurant</h1>
+        <p>We'd love to hear your feedback!</p>
+        <div id="rating-container">
+            <span class="star" onclick="rate(1)">★</span>
+            <span class="star" onclick="rate(2)">★</span>
+            <span class="star" onclick="rate(3)">★</span>
+            <span class="star" onclick="rate(4)">★</span>
+            <span class="star" onclick="rate(5)">★</span>
+        </div>
+        <textarea id="comment" placeholder="Leave a comment..."></textarea>
+        <button id="submit-btn" onclick="submitFeedback()">Submit Feedback</button>
+    </div>
+    <h3>Customer reviews :</h3>
+    <div class="review-container">
+        <div class="review-heading">Exceptional Dining Experience</div>
+        <div class="stars-container">
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+        </div>
+        <div class="review-text">
+            I recently had the pleasure of dining at Empire Restaurant, and it exceeded all my expectations. The ambiance, service, and, most importantly, the food were outstanding.
+        </div>
+        <div class="customer-name">Asrar Khan</div>
+    </div>
+    
+    <div class="review-container">
+        <div class="review-heading">Delicious Cuisine</div>
+        <div class="stars-container">
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+        </div>
+        <div class="review-text">
+            Empire Restaurant offers a diverse menu with delicious options. The flavors are unique, and the presentation of each dish is a work of art. A must-visit for food enthusiasts!
+        </div>
+        <div class="customer-name">Sakeeb</div>
+    </div>
+    
+    <div class="review-container">
+        <div class="review-heading">Warm Atmosphere</div>
+        <div class="stars-container">
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+        </div>
+        <div class="review-text">
+            The warm and inviting atmosphere at Empire Restaurant makes it the perfect place for a cozy dinner. The staff is friendly, and the attention to detail creates a memorable experience.
+        </div>
+        <div class="customer-name">Siddiq</div>
+    </div>
+    
+    <div class="review-container">
+        <div class="review-heading">Outstanding Service</div>
+        <div class="stars-container">
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+        </div>
+        <div class="review-text">
+            I was impressed with the impeccable service at Empire Restaurant. The staff is attentive, knowledgeable, and goes above and beyond to ensure a delightful dining experience.
+        </div>
+        <div class="customer-name">Sarkar</div>
+    </div>
+    
+    <div class="review-container">
+        <div class="review-heading">A Culinary Delight</div>
+        <div class="stars-container">
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+        </div>
+        <div class="review-text">
+            Empire Restaurant has truly mastered the art of culinary delight. Each dish tells a story of passion and creativity. I can't wait to return and explore more of their menu!
+        </div>
+        <div class="customer-name">Moye Moye</div>
+    </div>
+
+    <script>
+        let selectedRating = 0;
+
+        function rate(star) {
+            selectedRating = star;
+            for (let i = 1; i <= 5; i++) {
+                const starElement = document.querySelector(`.star:nth-child(${i})`);
+                if (i <= star) {
+                    starElement.classList.add('active');
+                } else {
+                    starElement.classList.remove('active');
+                }
+            }
+        }
+
+        function submitFeedback() {
+            if (selectedRating === 0) {
+                alert("Please select a rating before submitting.");
+            } else {
+                const comment = document.getElementById('comment').value;
+                alert(`Thank you for your feedback!\nRating: ${selectedRating}\nComment: ${comment}`);
+                // You can add logic here to send the feedback to a server or perform any other actions.
+            }
+        }
+    </script>
+
+</body>
+</html>
